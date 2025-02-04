@@ -25,7 +25,8 @@ p:not(.slogan),
 .icon-list,
 h1,
 .right,
-.mainInfo {
+.mainInfo,
+.title {
   width: auto;
 }
 
@@ -113,6 +114,16 @@ h1,
   .container .right .mainInfo {
     text-align: center;
   }
+}
+
+.container .right .mainInfo .logo {
+  font-size: 2em;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+
+.container .right .mainInfo .logo img {
+  height: 6em;
 }
 
 .container .right .mainInfo h1 {
@@ -209,6 +220,7 @@ h1,
 }
 
 .right,
+.title,
 .mainInfo,
 .left {
   display: -webkit-box;
@@ -236,7 +248,6 @@ button,
 }
 
 @media screen and (max-width: 576px) {
-
   .slogan,
   .form-subscribe {
     margin-left: auto;
