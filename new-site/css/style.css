@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   height: 100%;
   text-align: center;
   background: #292929;
@@ -1126,7 +1126,7 @@ nav.nav-inner {
 }
 
 .logo-corner img {
-  height: 215px;
+  height: 180px;
 }
 
 .hero-corner,
@@ -4394,6 +4394,10 @@ section.article {
 @media only screen and (max-width: 1064px) {
   .page-load {
     left: 0;
+  }
+  .page-scroll-nav li {
+    height: 55px;
+    line-height: 55px;
   }
   .hide_ondesktop {
     display: block;
