@@ -360,15 +360,24 @@ blockquote p {
   bottom: 180px;
   background: rgba(255, 255, 255, 0.1);
 }
-.logo-holder {
+.logo-desktop-holder {
   position: absolute;
   top: 50px;
   left: 20px;
   z-index: 5;
 }
-.logo-holder img {
+.logo-desktop-holder img {
   width: 50px;
   height: 50px;
+}
+.logo-mobile-holder {
+  position: absolute;
+  top: -3px;
+  left: 0px;
+  z-index: 5;
+}
+.logo-mobile-holder img {
+  height: 75px;
 }
 .nav-button {
   width: 28px;
@@ -2099,6 +2108,49 @@ section {
 .cts-dot,
 .cts-text {
   display: none;
+}
+.main-dev-custom {
+  padding-left: 30px;
+}
+.main-dev-custom h2 {
+  text-align: left;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+  color: #393939;
+  padding-bottom: 30px;
+  position: relative;
+}
+.main-dev-custom h2 span {
+  color: #666;
+}
+.main-dev-custom h2:before {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+}
+.main-dev-custom h2 a {
+  color: #999;
+}
+.main-dev-custom p,
+.main-dev-custom h5 {
+  text-align: left;
+}
+.main-dev-custom h5 {
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  position: relative;
+  padding-bottom: 16px;
+}
+.row-about {
+  margin-top: 300px;
+  margin-bottom: 100px;
 }
 .main-about {
   padding-left: 30px;
@@ -4322,6 +4374,9 @@ section.article {
 .mob-bg {
   display: none;
 }
+.hide_ondesktop {
+  display: none;
+}
 /*------ responsive ------------------------------------------------*/
 @media only screen and (max-width: 1600px) {
   .client-list li a {
@@ -4340,11 +4395,15 @@ section.article {
   .page-load {
     left: 0;
   }
+  .hide_ondesktop {
+    display: block;
+  }
   .fixed-column-wrap,
   .height-emulator,
   .folio-btn-tooltip,
   .header-social:before,
   .share-wrapper:before,
+  .hide_ontablet,
   .element {
     display: none;
   }
@@ -4392,14 +4451,6 @@ section.article {
     position: absolute;
     top: 20px;
     left: 110px;
-  }
-  .logo-holder {
-    top: 14px;
-    left: 15px;
-  }
-  .logo-holder img {
-    width: 44px;
-    height: 44px;
   }
   .menu-button-text {
     bottom: 10px;
