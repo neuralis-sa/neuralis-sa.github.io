@@ -71,9 +71,7 @@
               <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             </li> -->
             <li>
-              <a href="javascript:window.location.href = 'mailto:' + ['info','neuralis.ch'].join('@')"
-                ><i class="fa fa-envelope"></i
-              ></a>
+              <a href="#contact"><i class="fa fa-envelope"></i></a>
             </li>
             <li>
               <a
@@ -93,15 +91,12 @@
       <!-- wrapper -->
       <div id="wrapper">
         <!-- content-holder  -->
-        <div
-          class="content-holder scroll-content"
-          data-pagetitle="neuralis sa"
-        >
+        <div class="content-holder scroll-content" data-pagetitle="neuralis sa">
           <!-- nav-holder-->
           <div class="nav-holder but-hol">
             <div class="nav-scroll-bar-wrap fl-wrap">
               <a href="index.html" class="ajax logo_menu"
-                ><img src="images/logo2.png" alt=""
+                ><img src="images/logo-boule-neuralis-blanc.png" alt=""
               /></a>
               <div class="nav-container fl-wrap">
                 <!-- nav -->
@@ -140,15 +135,22 @@
             </div>
           </div>
           <!-- fixed-column-wrap end-->
-           <!-- hero-wrap--> 
-           <div class="hero-wrap fl-wrap full-height scroll-con-sec hidden-section" id="sec1" data-scrollax-parent="true">
-            <div class="media-container" data-scrollax="properties: { translateY: '30%' }">
-                <div class="video-container">
-                    <video playsinline autoplay  loop muted  class="bgvid">
-                        <source src="video/bg.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="overlay"></div>
+          <!-- hero-wrap-->
+          <div
+            class="hero-wrap fl-wrap full-height scroll-con-sec hidden-section"
+            id="sec1"
+            data-scrollax-parent="true"
+          >
+            <div
+              class="media-container"
+              data-scrollax="properties: { translateY: '30%' }"
+            >
+              <div class="video-container">
+                <video playsinline autoplay loop muted class="bgvid">
+                  <source src="video/bg.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="overlay"></div>
             </div>
             <div class="half-hero-wrap">
               <div class="pr-bg"></div>
@@ -193,8 +195,8 @@
               <span>Faites défiler pour découvrir</span>
             </div>
             <!-- hero  elements end-->
-        </div>
-        <!-- hero-wrap end-->
+          </div>
+          <!-- hero-wrap end-->
           <!-- column-wrap -->
           <div class="column-wrap">
             <!--content -->
@@ -362,9 +364,7 @@
                             </li>
                           </ul>
                         </div>
-                        <a
-                          href="javascript:window.location.href = 'mailto:' + ['info','neuralis.ch'].join('@')"
-                          class="btn ajax fl-btn color-bg"
+                        <a href="#contact" class="btn fl-btn color-bg"
                           >Contactez-nous</a
                         >
                       </div>
@@ -647,9 +647,7 @@
                             </li>
                           </ul>
                         </div>
-                        <a
-                          href="javascript:window.location.href = 'mailto:' + ['info','neuralis.ch'].join('@')"
-                          class="btn fl-btn color-bg"
+                        <a href="#contact" class="btn fl-btn color-bg"
                           >Contactez-nous</a
                         >
                       </div>
@@ -668,32 +666,121 @@
           </div>
           <!--content  end -->
           <!--footer-->
-          <div class="height-emulator fl-wrap"></div>
+          <div
+            id="contact"
+            class="height-emulator scroll-con-sec fl-wrap"
+          ></div>
           <footer class="main-footer fixed-footer">
             <div class="container">
               <div class="footer-inner fl-wrap">
                 <div class="row">
                   <div class="col-md-6">
+                    <div class="footer-box fl-wrap">
+                      <div class="footer-title fl-wrap">
+                        <!-- <span>001.</span> -->
+                        Contactez-nous
+                      </div>
+                      <div class="footer-box-item fl-wrap">
+                        <div class="subcribe-form fl-wrap">
+                          <form
+                            class="custom-form"
+                            id="contact-form"
+                            action="https://api.web3forms.com/submit"
+                            method="POST"
+                          >
+                            <!-- Replace with your Access Key -->
+                            <input
+                              type="hidden"
+                              name="access_key"
+                              value="194a3797-3bb1-444c-9e2b-3904bc8ff882"
+                            />
+
+                            <!-- Form Inputs. Each input must have a name="" attribute -->
+                            <div class="row">
+                              <div class="col-md-6">
+                                <label><i class="fal fa-user"></i></label>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  placeholder="Votre nom *"
+                                  required
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <label><i class="fal fa-envelope"></i> </label>
+                                <input
+                                  type="email"
+                                  name="email"
+                                  placeholder="Votre email *"
+                                  required
+                                />
+                              </div>
+                              <textarea
+                                name="message"
+                                cols="40"
+                                rows="3"
+                                placeholder="Votre message *"
+                                required
+                              ></textarea>
+                            </div>
+
+                            <!-- Honeypot Spam Protection -->
+                            <input
+                              type="checkbox"
+                              name="botcheck"
+                              class="hidden"
+                              style="display: none"
+                            />
+
+                            <div
+                              id="captcha-error"
+                              class="captcha-error"
+                              style="display: none"
+                            >
+                              Merci de compléter le captcha
+                            </div>
+
+                            <div class="form-captcha">
+                              <div
+                                class="h-captcha"
+                                data-theme="dark"
+                                data-captcha="true"
+                              ></div>
+                              <button class="btn color-bg" type="submit">
+                                Envoyer
+                              </button>
+                            </div>
+
+                            <!-- Custom Confirmation / Success Page -->
+                            <input
+                              type="hidden"
+                              name="redirect"
+                              value="https://www.neuralis.ch/thanks.html"
+                            />
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
                     <div class="footer-title fl-wrap">
                       <!-- <span>001.</span> -->
-                      Contact
+                      Info
                     </div>
                     <div class="footer-box-item fl-wrap">
                       <!-- footer-contacts-->
                       <div class="footer-contacts fl-wrap">
                         <ul>
-                          <!-- <li>
+                          <li>
                             <i class="fal fa-phone"></i><span>Téléphone :</span
                             ><a href="#">+41791234567</a>
-                          </li> -->
-                          <li>
-                            <i class="fal fa-envelope"></i><span>Email :</span
-                            ><a href="javascript:window.location.href = 'mailto:' + ['info','neuralis.ch'].join('@')">i<!-- bypassrobot -->nfo@neura<!-- bypassrobot -->lis.ch</a>
                           </li>
-                          <!-- <li>
+                          <li>
                             <i class="fal fa-map-marker"></i><span>Address</span
-                            ><a href="#">USA 27TH Brooklyn NY</a>
-                          </li> -->
+                            ><a href="#"
+                              >Route de la Drague 18<br />1950 Sion</a
+                            >
+                          </li>
                         </ul>
                       </div>
                       <!-- footer end -->
@@ -733,5 +820,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/captcha.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>
