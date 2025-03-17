@@ -3797,7 +3797,7 @@ section {
   border-top: 5px solid #666;
   right: 20px;
 }
-.custom-form textarea,
+
 .custom-form input[type="text"],
 .custom-form input[type="email"],
 .custom-form input[type="password"] {
@@ -3806,7 +3806,7 @@ section {
   /* border: 1px solid #eee; */
   background: rgba(255, 255, 255, 0.11);
   width: 100%;
-  padding: 0 60px;
+  padding: 0 20px 0 60px;
   height: 70px;
   line-height: 70px;
   color: #fff;
@@ -3814,6 +3814,22 @@ section {
   font-family: "Mukta", sans-serif;
   -webkit-appearance: none;
 }
+
+.custom-form textarea {
+  float: left;
+  border: none;
+  /* border: 1px solid #eee; */
+  background: rgba(255, 255, 255, 0.11);
+  width: 100%;
+  color: #fff;
+  font-size: 12px;
+  font-family: "Mukta", sans-serif;
+  height: 290px;
+  resize: none;
+  padding: 20px;
+  -webkit-appearance: none;
+}
+
 .custom-form input::-webkit-input-placeholder,
 .custom-form textarea::-webkit-input-placeholder {
   color: #fff;
@@ -3827,12 +3843,7 @@ section {
   font-weight: 600;
   font-size: 13px;
 }
-.custom-form textarea {
-  height: 290px;
-  resize: none;
-  padding: 20px 60px;
-  -webkit-appearance: none;
-}
+
 .custom-form input {
   margin-bottom: 20px;
 }
@@ -3885,6 +3896,7 @@ section {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -3893,10 +3905,17 @@ section {
   color: red;
 }
 /* ------Team------------------------------------------------------------ */
+.team-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
 .team-box {
-  float: left;
-  width: 50%;
   position: relative;
+  width: 550px;
   padding: 0 20px 0 0;
   margin-bottom: 50px;
 }
@@ -3915,10 +3934,7 @@ section {
   bottom: -25px;
   right: 40px;
 }
-.team-social li {
-  float: left;
-  position: relative;
-}
+
 .team-social li:before {
   content: "";
   position: absolute;
@@ -3934,11 +3950,13 @@ section {
   display: none;
 }
 .team-social li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
   line-height: 50px;
   background: #383838;
-  display: block;
 }
 .team-social li a:hover {
   color: #fff;
@@ -3968,6 +3986,7 @@ section {
 }
 .team-info {
   float: left;
+  position: relative;
   width: 100%;
   text-align: left;
   padding: 20px;
