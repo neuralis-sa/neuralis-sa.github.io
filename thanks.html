@@ -35,11 +35,11 @@
         <!-- Desktop logo -->
         <a
           href="index.html"
-          class="hide_onmobile hide_ontablet logo-desktop-holder ajax"
+          class="hide_onmobile hide_ontablet logo-desktop-holder"
           ><img src="images/logo-boule-neuralis-blanc.png" alt=""
         /></a>
         <!-- Mobile logo -->
-        <a href="index.html" class="hide_ondesktop logo-mobile-holder ajax"
+        <a href="index.html" class="hide_ondesktop logo-mobile-holder"
           ><img src="images/logo-neuralis-horizontal-blanc.svg" alt=""
         /></a>
         <!-- nav-button-wrap-->
@@ -50,6 +50,18 @@
           <div class="menu-button-text">Menu</div>
         </div> -->
         <!-- nav-button-wrap end-->
+        <div class="header-support">
+          <ul>
+            <li>
+              <a href="support.html" class="custom-scroll-link">
+                <div>
+                  <i class="fa fa-life-ring"></i>
+                  <span class="support-text">SUPPORT</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
         <div class="header-social">
           <ul>
             <!-- <li>
@@ -59,7 +71,7 @@
               <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             </li> -->
             <li>
-              <a href="index.html#contact"><i class="fa fa-envelope"></i></a>
+              <a href="contact.html"><i class="fa fa-envelope"></i></a>
             </li>
             <li>
               <a
@@ -124,117 +136,44 @@
             <div class="container">
               <div class="footer-inner fl-wrap">
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="footer-box fl-wrap">
-                      <div class="footer-title fl-wrap">
-                        <!-- <span>001.</span> -->
-                        Contactez-nous
-                      </div>
-                      <div class="footer-box-item fl-wrap">
-                        <div class="subcribe-form fl-wrap">
-                          <form
-                            class="custom-form"
-                            id="contact-form"
-                            action="https://api.web3forms.com/submit"
-                            method="POST"
-                          >
-                            <!-- Replace with your Access Key -->
-                            <input
-                              type="hidden"
-                              name="access_key"
-                              value="194a3797-3bb1-444c-9e2b-3904bc8ff882"
-                            />
-
-                            <!-- Form Inputs. Each input must have a name="" attribute -->
-                            <div class="row">
-                              <div class="col-md-6">
-                                <label><i class="fal fa-user"></i></label>
-                                <input
-                                  type="text"
-                                  name="name"
-                                  placeholder="Votre nom *"
-                                  required
-                                />
-                              </div>
-                              <div class="col-md-6">
-                                <label><i class="fal fa-envelope"></i> </label>
-                                <input
-                                  type="email"
-                                  name="email"
-                                  placeholder="Votre email *"
-                                  required
-                                />
-                              </div>
-                              <textarea
-                                name="message"
-                                cols="40"
-                                rows="3"
-                                placeholder="Votre message *"
-                                required
-                              ></textarea>
-                            </div>
-
-                            <!-- Honeypot Spam Protection -->
-                            <input
-                              type="checkbox"
-                              name="botcheck"
-                              class="hidden"
-                              style="display: none"
-                            />
-
-                            <div
-                              id="captcha-error"
-                              class="captcha-error"
-                              style="display: none"
-                            >
-                              Merci de compléter le captcha
-                            </div>
-
-                            <div class="form-captcha">
-                              <div
-                                class="h-captcha"
-                                data-theme="dark"
-                                data-captcha="true"
-                              ></div>
-                              <button class="btn color-bg" type="submit">
-                                Envoyer
-                              </button>
-                            </div>
-
-                            <!-- Custom Confirmation / Success Page -->
-                            <input
-                              type="hidden"
-                              name="redirect"
-                              value="https://www.neuralis.ch/thanks.html"
-                            />
-                          </form>
-                        </div>
-                      </div>
+                  <div class="col-md-4">
+                    <div class="footer-box-item fl-wrap">
+                      <img
+                        src="images/logo-neuralis-horizontal-blanc.svg"
+                        alt=""
+                      />
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="footer-title fl-wrap">
-                      <!-- <span>001.</span> -->
-                      Info
-                    </div>
+                  <div class="col-md-4">
                     <div class="footer-box-item fl-wrap">
                       <!-- footer-contacts-->
                       <div class="footer-contacts fl-wrap">
                         <ul>
-                          <!-- <li>
+                          <li>
                             <i class="fal fa-phone"></i><span>Téléphone :</span
-                            ><a href="#">+41791234567</a>
-                          </li> -->
+                            ><a href="#">+41 27 721 6000</a>
+                          </li>
                           <li>
                             <i class="fal fa-map-marker"></i
-                            ><span>Adresse : </span
-                            ><a href="#"
-                              >Route de la Drague 18<br />1950 Sion</a
+                            ><span>Adresse :</span
+                            ><a
+                              target="_blank"
+                              href="https://www.google.ch/maps/place/Rue+de+la+Drague+18,+1950+Sion/@46.2213967,7.3535557,1057m/data=!3m2!1e3!4b1!4m6!3m5!1s0x478edc17c2af881f:0xb48ec972be2964a3!8m2!3d46.2213967!4d7.3561306!16s%2Fg%2F11c5bg9qg1?hl=fr&entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
+                              >Rue du Châble-Bet 41<br />1920 Martigny</a
                             >
                           </li>
                         </ul>
                       </div>
                       <!-- footer end -->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="footer-box-item fl-wrap">
+                      <div class="footer-contacts fl-wrap">
+                        <a href="contact.html" class="btn fl-btn color-bg"
+                          >Contact</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>

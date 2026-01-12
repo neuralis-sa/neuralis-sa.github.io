@@ -16,6 +16,10 @@
     <link type="text/css" rel="stylesheet" href="css/plugins.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="css/color.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
     <!--=============== favicons ===============-->
     <link rel="shortcut icon" href="images/favicon/favicon.ico" />
     <link
@@ -47,11 +51,11 @@
         <!-- Desktop logo -->
         <a
           href="index.html"
-          class="hide_onmobile hide_ontablet logo-desktop-holder ajax"
+          class="hide_onmobile hide_ontablet logo-desktop-holder"
           ><img src="images/logo-boule-neuralis-blanc.png" alt=""
         /></a>
         <!-- Mobile logo -->
-        <a href="index.html" class="hide_ondesktop logo-mobile-holder ajax"
+        <a href="index.html" class="hide_ondesktop logo-mobile-holder"
           ><img src="images/logo-neuralis-horizontal-blanc.svg" alt=""
         /></a>
         <!-- nav-button-wrap-->
@@ -62,6 +66,18 @@
           <div class="menu-button-text">Menu</div>
         </div> -->
         <!-- nav-button-wrap end-->
+        <div class="header-support">
+          <ul>
+            <li>
+              <a href="support.html" class="custom-scroll-link">
+                <div>
+                  <i class="fa fa-life-ring"></i>
+                  <span class="support-text">SUPPORT</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
         <div class="header-social">
           <ul>
             <!-- <li>
@@ -71,7 +87,7 @@
               <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             </li> -->
             <li>
-              <a href="#contact" class="custom-scroll-link"
+              <a href="contact.html" class="custom-scroll-link"
                 ><i class="fa fa-envelope"></i
               ></a>
             </li>
@@ -97,7 +113,7 @@
           <!-- nav-holder-->
           <div class="nav-holder but-hol">
             <div class="nav-scroll-bar-wrap fl-wrap">
-              <a href="index.html" class="ajax logo_menu"
+              <a href="index.html" class="logo_menu"
                 ><img src="images/logo-boule-neuralis-blanc.png" alt=""
               /></a>
               <div class="nav-container fl-wrap">
@@ -158,21 +174,17 @@
               <div class="pr-bg"></div>
               <div class=""></div>
               <div class="rotate_text hero-decor-let">
+                <div>Services IT managés</div>
                 <div>Intelligence Artificielle</div>
-                <div><span>Digitalisation</span></div>
+                <div>Digitalisation</div>
                 <div>Développement</div>
-                <!-- <div><span>Ecommerce</span></div> -->
               </div>
               <h1>
-                Digitalisation, <span>IA</span> et <br />
+                Informatique, <span>IA</span> et <br />
                 <span>développement sur mesure</span> pour <br />votre
                 entreprise
               </h1>
-              <h4>
-                Neuralis accompagne les PME suisses dans l'optimisation de leur
-                administration et la création de solutions digitales adaptées à
-                leurs besoins.
-              </h4>
+              <h4>Votre informatique en toute sérénité.</h4>
               <div class="clearfix"></div>
               <a
                 href="#secServices"
@@ -240,211 +252,117 @@
               </div>
               <!--page-scroll-nav end-->
               <!--section  -->
-              <section id="secServices" class="hidden-section bot-element">
+              <section
+                class="hidden-section scroll-con-sec bot-element"
+                id="secServices"
+              >
                 <div class="container">
                   <div class="section-title fl-wrap">
-                    <h3>
-                      1 . Optimisation & Digitalisation </br> de votre administration
-                    </h3>
+                    <h3>Nos Services</h3>
                     <p>
-                      Libérer votre PME des tâches répétitives et chronophages
-                      grâce à l'intelligence artificielle.
+                      Accompagner les entreprises dans leur transformation
+                      digitale en leur offrant des solutions IA sur mesure et
+                      une vision stratégique claire, afin qu'elles puissent se
+                      concentrer sur ce qui compte vraiment : leur métier et
+                      leur croissance.
                     </p>
                   </div>
-                  <!--process-wrap  -->
-                  <div class="process-wrap fl-wrap">
-                    <p>
-                      Votre temps est précieux. Chez Neuralis, nous aidons les PME à automatiser leurs processus administratifs et à digitaliser leurs outils pour gagner en efficacité.
-Grâce à des solutions concrètes et pragmatiques, nous réduisons la charge administrative et permettons à vos équipes de se concentrer sur l’essentiel : vos clients et votre croissance.
-                    </p>
-                    </br>
-                    <ul>
-                      <li>
-                        <div class="time-line-icon">
-                          <i class="fab fa-slideshare"></i>
+                  <div class="cards-wrap fl-wrap">
+                    <div class="row">
+                      <!--card item -->
+                      <div class="col-md-4">
+                        <div class="content-inner fl-wrap">
+                          <div class="content-back">
+                            <div class="cf-inner">
+                              <div class="inner">
+                                <div class="dec-icon">
+                                  <i class="fal fa-server"></i>
+                                </div>
+                                <h2>Services IT Managés</h2>
+                                <p>
+                                  Garantir que l'informatique fonctionne en
+                                  toute temps, avec un interlocuteur unique et
+                                  réactif.
+                                </p>
+                                <a
+                                  href="services-it-manages.html"
+                                  class="btn border-btn color-bg"
+                                  >Plus de détails</a
+                                >
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4>Diagnostic & Audit</h4>
-                        <div class="process-details">
-                          <h6>
-                            Comprendre avant d’agir
-                          </h6>    
-                          <p>
-                            Nous analysons vos processus administratifs pour identifier les points de blocage et les tâches répétitives qui vous font perdre du temps. Ce diagnostic met en lumière les opportunités d’automatisation et de simplification, afin de bâtir un plan concret et réaliste.
-                          </p>
-                                                                       
+                      </div>
+                      <!--card item end -->
+                      <!--card item -->
+                      <div class="col-md-4">
+                        <div class="content-inner fl-wrap">
+                          <div class="content-back">
+                            <div class="cf-inner">
+                              <div class="inner">
+                                <div class="dec-icon">
+                                  <i class="ti ti-settings-ai"></i>
+                                </div>
+                                <h2>IA & Solutions Digitales</h2>
+                                <p>
+                                  Créer des outils qui optimisent vraiment le
+                                  travail, en automatisant et simplifiant vos
+                                  processus.
+                                </p>
+                                <a
+                                  href="services-ia-digitales.html"
+                                  class="btn border-btn color-bg"
+                                  >Plus de détails</a
+                                >
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <span class="process-numder">01.</span>
-                      </li>
-                      <li>
-                        <div class="time-line-icon">
-                          <i class="fal fa-laptop"></i>
+                      </div>
+                      <!--card item end -->
+                      <!--card item -->
+                      <div class="col-md-4">
+                        <div class="content-inner fl-wrap">
+                          <div class="content-back">
+                            <div class="cf-inner">
+                              <div class="inner">
+                                <div class="dec-icon">
+                                  <i class="ti ti-report-analytics"></i>
+                                </div>
+                                <h2>Audit, Conseil & Formation</h2>
+                                <p>
+                                  Donner une vision claire pour prendre les
+                                  bonnes décisions technologiques au bon rythme.
+                                </p>
+                                <a
+                                  href="services-audit-conseil.html"
+                                  class="btn border-btn color-bg"
+                                  >Plus de détails</a
+                                >
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <h4>Mise en place</h4>
-                        <div class="process-details">
-                          <h6>Du concret, rapidement</h6>
-                          <p>
-                            Nous mettons en place des solutions qui allègent immédiatement votre charge administrative : traitement automatique des factures fournisseurs, callbots pour filtrer les appels, rédaction assistée des PV de séance, interconnexion de vos outils existants (ERP, CRM, Office 365).
-Chaque étape est déployée de manière progressive, pour un impact rapide et mesurable.
-                          </p>
-                        </div>
-                        <span class="process-numder">02.</span>
-                      </li>
-                      <li>
-                        <div class="time-line-icon">
-                          <i class="fal fa-flag-checkered"></i>
-                        </div>
-                        <h4>Suivi & Évolution</h4>
-                        <div class="process-details">
-                          <h6>
-                            Une optimisation qui dure
-                          </h6>
-                           <p>
-                            Nous accompagnons vos équipes dans l’adoption des nouveaux outils grâce à la formation et au support continu. Votre environnement digital reste évolutif : nous adaptons et enrichissons les solutions au fil de vos besoins, en intégrant de nouvelles automatisations et des briques d’IA au bon moment.
-                          </p>
-                          
-                        </div>
-                        <span class="process-numder">03.</span>
-                      </li>
-                    </ul>
+                      </div>
+                      <!--card item end -->
+                    </div>
+                    <div class="srv-link-text fl-wrap">
+                      <h4>Prêt à transformer votre entreprise ?</h4>
+                      <a
+                        href="contact.html"
+                        class="btn float-btn custom-scroll-link color-bg"
+                        >Contactez-nous</a
+                      >
+                    </div>
                   </div>
-                  <!--process-wrap   end-->
                   <div class="sec-number">01.</div>
                 </div>
               </section>
               <!--section end -->
-              <!--section -->
-              <section class="hidden-section scroll-con-sec bot-element">
-                <!-- <div class="col-wc_dec"></div> -->
-                <div class="container">
-                  <div class="section-title fl-wrap">
-                    <h3>2. Développements sur mesure</h3>
-                    <p>Une solution adatapée à vos besoins</p>
-                  </div>
-                  <!-- <div class="section-title fl-wrap">
-                    <h3>A propos de nous</h3>
-                    <p></p>
-                  </div> -->
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="dec-img fl-wrap">
-                        <img
-                          src="images/services/dev-bg.jpg"
-                          class="respimg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-sm-7">
-                      <div class="main-dev-custom fl-wrap">
-                        <h5></h5>
-                        <h2>Un logiciel pensé pour vous, pas l’inverse</h2>
-                        <p>
-                          Nous concevons et développons des solutions
-                          logicielles performantes et évolutives en utilisant
-                          les technologies les plus récentes.
-                        </p>
-                        <div class="dec-list fl-wrap">
-                          <ul>
-                            <li>
-                              Développement cloud-native et applications SaaS
-                            </li>
-                            <li>
-                              Solutions basées sur l’IA et l’automatisation
-                              intelligente
-                            </li>
-                            <li>
-                              Intégration et interconnexion avec vos systèmes
-                              existants (API, microservices)
-                            </li>
-                          </ul>
-                        </div>
-                        <p>Avec une approche agile, nous garantissons :</p>
-                        <div class="dec-list fl-wrap">
-                          <ul>
-                            <li>Un développement modulaire et scalable</li>
-                            <li>
-                              Des performances optimisées avec des technologies
-                              modernes
-                            </li>
-                            <li>
-                              Un suivi post-déploiement pour assurer
-                              l’évolutivité et la sécurité de votre solution
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="#contact" class="btn fl-btn color-bg"
-                          >Contactez-nous</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!--section end -->
-              <!--section -->
-              <section class="dark-bg bot-element">
-                <div class="container">
-                  <div class="inline-facts-container fl-wrap">
-                    <!-- inline-facts -->
-                    <!-- <div class="inline-facts-wrap">
-                      <div class="inline-facts">
-                        <div class="milestone-counter">
-                          <div class="stats animaper">
-                            <div class="num" data-content="0" data-num="145">
-                              0
-                            </div>
-                          </div>
-                        </div>
-                        <h6>Finished projects</h6>
-                      </div>
-                    </div> -->
-                    <!-- inline-facts end -->
-                    <!-- inline-facts  -->
-                    <!-- <div class="inline-facts-wrap">
-                      <div class="inline-facts">
-                        <div class="milestone-counter">
-                          <div class="stats animaper">
-                            <div class="num" data-content="0" data-num="357">
-                              0
-                            </div>
-                          </div>
-                        </div>
-                        <h6>Happy customers</h6>
-                      </div>
-                    </div> -->
-                    <!-- inline-facts end -->
-                    <!-- inline-facts  -->
-                    <!-- <div class="inline-facts-wrap">
-                      <div class="inline-facts">
-                        <div class="milestone-counter">
-                          <div class="stats animaper">
-                            <div class="num" data-content="0" data-num="825">
-                              0
-                            </div>
-                          </div>
-                        </div>
-                        <h6>Working hours</h6>
-                      </div>
-                    </div> -->
-                    <!-- inline-facts end -->
-                    <!-- inline-facts  -->
-                    <!-- <div class="inline-facts-wrap">
-                      <div class="inline-facts">
-                        <div class="milestone-counter">
-                          <div class="stats animaper">
-                            <div class="num" data-content="0" data-num="15">
-                              0
-                            </div>
-                          </div>
-                        </div>
-                        <h6>Awards won</h6>
-                      </div>
-                    </div> -->
-                    <!-- inline-facts end -->
-                  </div>
-                </div>
-              </section>
-              <!--section end -->
+              <!--section separator -->
+              <section class="dark-bg bot-element"></section>
+              <!--section separator end -->
               <!--section -->
               <section
                 id="secTeam"
@@ -460,7 +378,7 @@ Chaque étape est déployée de manière progressive, pour un impact rapide et m
                     </p>
                   </div>
                   <div class="team-box-container">
-                     <!-- team-box   -->
+                    <!-- team-box   -->
                     <div class="team-box">
                       <div class="team-photo">
                         <div class="overlay"></div>
@@ -531,7 +449,7 @@ Chaque étape est déployée de manière progressive, pour un impact rapide et m
                       </div>
                     </div>
                     <!-- team-box end -->
-                   
+
                     <!-- team-box   -->
                     <div class="team-box">
                       <div class="team-photo">
@@ -568,7 +486,75 @@ Chaque étape est déployée de manière progressive, pour un impact rapide et m
                       </div>
                     </div>
                     <!-- team-box end -->
-                  
+
+                    <!-- team-box   -->
+                    <div class="team-box">
+                      <div class="pr-bg pr-bg-white"></div>
+                      <div class="team-photo">
+                        <div class="overlay"></div>
+                        <img
+                          src="images/team/benoit.png"
+                          alt=""
+                          class="respimg"
+                        />
+                        <!-- <a href="#" class="team-contact_btn color-bg"
+      ><i class="fal fa-envelope"></i
+    ></a> -->
+                      </div>
+                      <div class="team-info">
+                        <h3>Benoît Florey</h3>
+                        <!--<h4>CEO</h4>-->
+                        <p>
+                          Benoît met son expertise en conseil stratégique et
+                          gestion financière au service de l’innovation en IA et
+                          développement logiciel. Avec une approche directe et
+                          positive, il accompagne les entreprises dans leur
+                          transformation pour atteindre leurs objectifs dans un
+                          monde technologique en constante évolution.
+                        </p>
+                        <ul class="team-social">
+                          <li>
+                            <a
+                              href="https://www.linkedin.com/in/benoit-florey-653988270/"
+                              target="_blank"
+                              ><i class="fab fa-linkedin"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- team-box end -->
+
+                    <!-- team-box   -->
+                    <div class="team-box">
+                      <div class="pr-bg pr-bg-white"></div>
+                      <div class="team-photo">
+                        <div class="overlay"></div>
+                        <img
+                          src="images/team/lucien.png"
+                          alt=""
+                          class="respimg"
+                        />
+                        <!-- <a href="#" class="team-contact_btn color-bg"
+      ><i class="fal fa-envelope"></i
+    ></a> -->
+                      </div>
+                      <div class="team-info">
+                        <h3>Lucien Debons</h3>
+                        <!--<h4>CEO</h4>-->
+                        <p>
+                          Lucien est la personne de référence pour
+                          l’administration, la comptabilité et la finance. Il
+                          assure une gestion financière fiable et structurée, en
+                          soutenant la direction dans le pilotage économique,
+                          l’optimisation des processus administratifs et la
+                          prise de décision stratégique, afin de permettre aux
+                          équipes IT de se concentrer pleinement sur leur cœur
+                          de métier.
+                        </p>
+                      </div>
+                    </div>
+                    <!-- team-box end -->
                   </div>
                   <div class="sec-number">02.</div>
                 </div>
@@ -576,10 +562,9 @@ Chaque étape est déployée de manière progressive, pour un impact rapide et m
                 <div class="col-wc_dec col-wc_dec2 col-wc_dec3"></div>
               </section>
               <!--section end -->
-              <div class="section-separator bot-element">
-                <span class="fl-wrap"></span>
-              </div>
-              <div class="section-separator"><span class="fl-wrap"></span></div>
+              <!--section separator -->
+              <section class="dark-bg bot-element"></section>
+              <!--section separator end -->
               <!--section -->
               <section
                 id="secAbout"
@@ -613,16 +598,18 @@ Chaque étape est déployée de manière progressive, pour un impact rapide et m
                         <div class="dec-list fl-wrap">
                           <ul>
                             <li>
-                              Une expertise en IA et en développement logiciel
+                              Une expertise complète : IT, IA & développement
                             </li>
+
                             <li>Une approche progressive et personnalisée</li>
+                            <li>Un interlocuteur unique, proche et réactif</li>
                             <li>
                               Un accompagnement long terme pour garantir
                               l’évolutivité de vos outils
                             </li>
                           </ul>
                         </div>
-                        <a href="#contact" class="btn fl-btn color-bg"
+                        <a href="contact.html" class="btn fl-btn color-bg"
                           >Contactez-nous</a
                         >
                       </div>
@@ -647,121 +634,44 @@ Chaque étape est déployée de manière progressive, pour un impact rapide et m
             <div class="container">
               <div class="footer-inner fl-wrap">
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="footer-box fl-wrap">
-                      <div class="footer-title fl-wrap">
-                        <!-- <span>001.</span> -->
-                        Contactez-nous
-                      </div>
-                      <div class="footer-box-item fl-wrap">
-                        <div class="subcribe-form fl-wrap">
-                          <form
-                            class="custom-form"
-                            id="contact-form"
-                            action="https://api.web3forms.com/submit"
-                            method="POST"
-                          >
-                            <!-- Replace with your Access Key -->
-                            <input
-                              type="hidden"
-                              name="access_key"
-                              value="194a3797-3bb1-444c-9e2b-3904bc8ff882"
-                            />
-
-                            <!-- Form Inputs. Each input must have a name="" attribute -->
-                            <div class="row">
-                              <div class="col-md-12">
-                                <label><i class="fal fa-user"></i></label>
-                                <input
-                                  type="text"
-                                  name="name"
-                                  placeholder="Votre nom *"
-                                  required
-                                />
-                              </div>
-                              <div class="col-md-12">
-                                <label><i class="fal fa-envelope"></i> </label>
-                                <input
-                                  type="email"
-                                  name="email"
-                                  placeholder="Votre email *"
-                                  required
-                                />
-                              </div>
-                              <div class="col-md-12">
-                                <textarea
-                                  name="message"
-                                  cols="40"
-                                  rows="3"
-                                  placeholder="Votre message *"
-                                  required
-                                ></textarea>
-                              </div>
-                            </div>
-
-                            <!-- Honeypot Spam Protection -->
-                            <input
-                              type="checkbox"
-                              name="botcheck"
-                              class="hidden"
-                              style="display: none"
-                            />
-
-                            <div
-                              id="captcha-error"
-                              class="captcha-error"
-                              style="display: none"
-                            >
-                              Merci de compléter le captcha
-                            </div>
-
-                            <div class="form-captcha">
-                              <div
-                                class="h-captcha"
-                                data-theme="dark"
-                                data-captcha="true"
-                              ></div>
-                              <button class="btn color-bg" type="submit">
-                                Envoyer
-                              </button>
-                            </div>
-
-                            <!-- Custom Confirmation / Success Page -->
-                            <input
-                              type="hidden"
-                              name="redirect"
-                              value="https://www.neuralis.ch/thanks.html"
-                            />
-                          </form>
-                        </div>
-                      </div>
+                  <div class="col-md-4">
+                    <div class="footer-box-item fl-wrap">
+                      <img
+                        src="images/logo-neuralis-horizontal-blanc.svg"
+                        alt=""
+                      />
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="footer-title fl-wrap">
-                      <!-- <span>001.</span> -->
-                      Info
-                    </div>
+                  <div class="col-md-4">
                     <div class="footer-box-item fl-wrap">
                       <!-- footer-contacts-->
                       <div class="footer-contacts fl-wrap">
                         <ul>
-                          <!-- <li>
+                          <li>
                             <i class="fal fa-phone"></i><span>Téléphone :</span
-                            ><a href="#">+41791234567</a>
-                          </li> -->
+                            ><a href="#">+41 27 721 6000</a>
+                          </li>
                           <li>
                             <i class="fal fa-map-marker"></i
                             ><span>Adresse :</span
                             ><a
                               target="_blank"
                               href="https://www.google.ch/maps/place/Rue+de+la+Drague+18,+1950+Sion/@46.2213967,7.3535557,1057m/data=!3m2!1e3!4b1!4m6!3m5!1s0x478edc17c2af881f:0xb48ec972be2964a3!8m2!3d46.2213967!4d7.3561306!16s%2Fg%2F11c5bg9qg1?hl=fr&entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
-                              >Route de la Drague 18<br />1950 Sion</a
+                              >Rue du Châble-Bet 41<br />1920 Martigny</a
                             >
                           </li>
                         </ul>
                       </div>
                       <!-- footer end -->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="footer-box-item fl-wrap">
+                      <div class="footer-contacts fl-wrap">
+                        <a href="contact.html" class="btn fl-btn color-bg"
+                          >Contact</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>

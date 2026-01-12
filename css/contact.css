@@ -1,0 +1,150 @@
+/* Contact Form - Light Theme Styles */
+
+.custom-form2 {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.custom-form2 .selectbox {
+  border-radius: 4px;
+  margin-bottom: 20px;
+  z-index: 100;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #292929;
+  font-weight: 600;
+  font-size: 12px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.custom-form2 .sel-dec .selectbox .select:before {
+  font-family: "Font Awesome\ 5 Pro";
+  content: "\f142";
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -10px;
+  z-index: 22;
+  font-size: 16px;
+  font-weight: 300;
+  color: #666;
+}
+
+.custom-form2 .selectbox .trigger .arrow {
+  border-top: 5px solid #292929;
+  right: 20px;
+}
+
+.custom-form2 input[type="text"],
+.custom-form2 input[type="email"],
+.custom-form2 input[type="password"] {
+  float: left;
+  border: 1px solid #ddd;
+  background: #fff;
+  width: 100%;
+  padding: 0 20px 0 60px;
+  height: 70px;
+  line-height: 70px;
+  color: #292929;
+  font-size: 12px;
+  font-family: "Mukta", sans-serif;
+  -webkit-appearance: none;
+  transition: border-color 0.3s ease;
+}
+
+.custom-form2 input[type="text"]:focus,
+.custom-form2 input[type="email"]:focus,
+.custom-form2 input[type="password"]:focus,
+.custom-form2 textarea:focus {
+  border-color: #292929;
+  outline: none;
+}
+
+.custom-form2 textarea {
+  float: left;
+  border: 1px solid #ddd;
+  background: #fff;
+  width: 100%;
+  color: #292929;
+  font-size: 12px;
+  font-family: "Mukta", sans-serif;
+  height: 290px;
+  resize: none;
+  padding: 20px;
+  -webkit-appearance: none;
+  transition: border-color 0.3s ease;
+}
+
+.custom-form2 input::-webkit-input-placeholder,
+.custom-form2 textarea::-webkit-input-placeholder {
+  color: #666;
+  font-weight: 600;
+  font-size: 12px;
+  position: relative;
+}
+
+.custom-form2 input:-moz-placeholder,
+.custom-form2 textarea:-moz-placeholder {
+  color: #666;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.custom-form2 input::placeholder,
+.custom-form2 textarea::placeholder {
+  color: #666;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.custom-form2 input {
+  margin-bottom: 20px;
+}
+
+.custom-form2 label {
+  float: left;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+  color: #292929;
+}
+
+.custom-form2 label i {
+  padding-right: 12px;
+  font-size: 16px;
+  position: absolute;
+  top: 26px;
+  left: 30px;
+  text-align: center;
+  color: #292929;
+}
+
+.custom-form2 button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  float: left;
+  font-size: 0.85em !important;
+  letter-spacing: 0;
+  -webkit-appearance: none;
+}
+
+.form-captcha2 {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Light theme captcha */
+.custom-form2 .h-captcha {
+  border: 1px solid #ddd;
+}

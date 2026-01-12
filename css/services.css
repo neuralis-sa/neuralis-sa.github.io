@@ -1,0 +1,393 @@
+/* Services Pages - Custom Styles */
+
+/* Services Boxes - Vertical Stack */
+.services-boxes-wrap {
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-box {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 0;
+  padding: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-box:hover {
+  background: #fff;
+  border-color: #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.service-box-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #292929;
+  border-radius: 0;
+  font-size: 28px;
+  color: #fff;
+  position: relative;
+}
+
+.service-box-icon i {
+  color: #5cbebc;
+}
+
+.service-box-icon:before,
+.service-box-icon:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.service-box-icon:before {
+  left: -8px;
+  top: 15px;
+}
+
+.service-box-icon:after {
+  right: -8px;
+  bottom: 15px;
+}
+
+.service-box-content {
+  flex: 1;
+}
+
+.service-box-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #292929;
+  font-family: "Teko", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-box-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+/* Pricing display for contract cards */
+.price-display {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-display .currency {
+  font-size: 18px;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.price-display .amount {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Teko", sans-serif;
+}
+
+.price-display .period {
+  font-size: 18px;
+  margin-left: 3px;
+}
+
+/* Equal height cards for pricing section */
+.cards-wrap .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards-wrap .row > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-wrap .content-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cards-wrap .content-back {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cards-wrap .cf-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cards-wrap .inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cards-wrap .dec-list {
+  flex: 1;
+  margin-top: auto;
+}
+
+.cards-wrap .dec-list li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cards-wrap .inner h5 {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cards-wrap .inner > p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Contracts Boxes - Vertical Stack */
+.contracts-boxes-wrap {
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.contract-box {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 0;
+  padding: 40px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.contract-box:hover {
+  background: #fff;
+  border-color: #ddd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contract-box.featured {
+  border: 2px solid #292929;
+  background: #fff;
+}
+
+.contract-box.featured:before {
+  content: "POPULAIRE";
+  position: absolute;
+  top: -12px;
+  left: 30px;
+  background: #292929;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: "Teko", sans-serif;
+}
+
+.contract-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.contract-box-title h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: #292929;
+  font-family: "Teko", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contract-box-price {
+  text-align: right;
+}
+
+.contract-box-price .price {
+  font-size: 36px;
+  font-weight: 700;
+  color: #292929;
+  line-height: 1;
+  font-family: "Teko", sans-serif;
+}
+
+.contract-box-price .price span {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.contract-box-price .period {
+  font-size: 14px;
+  color: #999;
+  margin-top: 5px;
+  font-family: "Mukta", sans-serif;
+}
+
+.contract-box-conditions {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.contract-box-conditions h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #292929;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Teko", sans-serif;
+}
+
+.contract-box-conditions p {
+  font-size: 15px;
+  color: #666;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.contract-box-conditions .small-text {
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.contract-box-content {
+  margin-bottom: 0;
+}
+
+.contract-box-content h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #292929;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Teko", sans-serif;
+}
+
+.contract-box-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contract-box-content ul li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contract-box-content ul li:last-child {
+  border-bottom: none;
+}
+
+.contract-box-content ul li:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 300;
+  position: absolute;
+  left: 0;
+  color: #292929;
+  font-size: 12px;
+  top: 14px;
+}
+
+.pricing-footer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+.pricing-footer p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.pricing-footer p strong {
+  color: #292929;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .service-box-icon {
+    margin: 0 auto 20px;
+  }
+
+  .service-box-icon:before,
+  .service-box-icon:after {
+    display: none;
+  }
+
+  .contract-box {
+    padding: 30px 20px;
+  }
+
+  .contract-box-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .contract-box-price {
+    text-align: center;
+  }
+
+  .contract-box-title h3 {
+    font-size: 28px;
+  }
+
+  .contract-box-price .price {
+    font-size: 32px;
+  }
+}
