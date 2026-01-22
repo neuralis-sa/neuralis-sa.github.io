@@ -710,6 +710,9 @@ nav.nav-inner {
   z-index: 20;
   padding: 30px 0;
   background: #383838;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header-support li a {
   display: flex;
@@ -4535,6 +4538,13 @@ section.article {
   .menu-button-text {
     bottom: 10px;
   }
+  .header-support {
+    width: 90px;
+    height: 100%;
+    top: 0;
+    padding: 0;
+    right: 180px;
+  }
   .header-social {
     width: auto;
     bottom: 17px;
@@ -4713,6 +4723,7 @@ section.article {
   }
 }
 @media only screen and (max-width: 560px) {
+  .header-support,
   .sec-number,
   .header-social,
   .back-to-home-btn,
