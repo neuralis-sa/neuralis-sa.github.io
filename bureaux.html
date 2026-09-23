@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Maquette 3D – bureaux Neuralis, Faact, BBX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;height:100%;overflow:hidden;background:#dfe7ec;font-family:Barlow,system-ui,sans-serif;color:#1f2a30}
 #c{position:fixed;inset:0;width:100%;height:100%;touch-action:none;display:block}
@@ -85,6 +85,12 @@ const T={
  ribV:tex(256,(x,s)=>{x.fillStyle='#d6d8d5';x.fillRect(0,0,s,s);for(let i=0;i<8;i++){x.fillStyle='#bfc2bf';x.fillRect(i*s/8,0,6,s);x.fillStyle='#e6e8e5';x.fillRect(i*s/8+6,0,3,s);}}),
  ribH:tex(256,(x,s)=>{x.fillStyle='#b9bec1';x.fillRect(0,0,s,s);for(let i=0;i<6;i++){x.fillStyle='#98a0a4';x.fillRect(0,i*s/6,s,5);x.fillStyle='#d3d7d9';x.fillRect(0,i*s/6+5,s,2);}})
 };
+const redraws=[];
+function canvasTex(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');draw(x,w,h);
+  const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.anisotropy=ANI;
+  redraws.push(()=>{x.clearRect(0,0,w,h);draw(x,w,h);t.needsUpdate=true;});return t;}
+function spaced(x,txt,cx,y,sp){let tw=0;const ws=[...txt].map(ch=>{const w=x.measureText(ch).width;tw+=w;return w;});tw+=sp*(txt.length-1);
+  let px=cx-tw/2;const al=x.textAlign;x.textAlign='left';[...txt].forEach((ch,i)=>{x.fillText(ch,px,y);px+=ws[i]+sp;});x.textAlign=al;}
 const rep=(t,u,v)=>{const c=t.clone();c.needsUpdate=true;c.repeat.set(u,v);return c;};
 
 /* ---------- ciel ---------- */
@@ -366,13 +372,13 @@ facade(g1,'E',[[0.6,3.6,'w'],[4.4,7.6,'w'],[8.4,9.4,'wF'],[10.9,13.5,'w'],[13.9,
 facade(g1,'S',[],L1);
 
 // logo Neuralis (vitrophanie) côté autoroute
-const logoTex=(()=>{const c=document.createElement('canvas');c.width=1024;c.height=256;const x=c.getContext('2d');
-  x.clearRect(0,0,1024,256);x.fillStyle='#ffffff';x.strokeStyle='#ffffff';x.lineWidth=7;
-  const P=[[70,70],[150,50],[120,140],[200,130],[60,190],[170,205]];
-  [[0,1],[0,2],[1,2],[1,3],[2,3],[2,4],[2,5],[3,5],[4,5]].forEach(([a,b])=>{x.beginPath();x.moveTo(...P[a]);x.lineTo(...P[b]);x.stroke();});
-  P.forEach(p=>{x.beginPath();x.arc(p[0],p[1],16,0,7);x.fill();});
-  x.font='600 150px Barlow, Arial, sans-serif';x.textBaseline='middle';x.fillText('neuralis',250,135);
-  const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.anisotropy=ANI;return t;})();
+const logoTex=canvasTex(2048,512,(x,w,h)=>{
+  x.fillStyle='#ffffff';x.strokeStyle='#ffffff';x.lineCap='round';
+  const cx=250,cy=256,R=150,P=[[cx,cy]];for(let i=0;i<6;i++){const a=-Math.PI/2+i*Math.PI/3;P.push([cx+R*Math.cos(a),cy+R*Math.sin(a)]);}
+  x.lineWidth=14;for(let i=1;i<=6;i++){x.beginPath();x.moveTo(...P[0]);x.lineTo(...P[i]);x.stroke();x.beginPath();x.moveTo(...P[i]);x.lineTo(...P[i%6+1]);x.stroke();}
+  P.forEach((p,i)=>{x.beginPath();x.arc(p[0],p[1],i?30:42,0,Math.PI*2);x.fill();});
+  x.font='600 250px Barlow, Arial, sans-serif';x.textBaseline='middle';x.textAlign='left';x.fillText('neuralis',470,262);
+});
 const logoMat=new THREE.MeshStandardMaterial({map:logoTex,transparent:true,roughness:.6,depthWrite:false,clippingPlanes:[L1.plane],polygonOffset:true,polygonOffsetFactor:-2});
 [[0.6,4.0],[5.2,8.4],[9.2,12.2]].forEach(([a,b])=>{const w=(b-a)*.78,h=w*.25;
   const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),logoMat);m.position.set(X((a+b)/2),1.6,Z(-.19));m.rotation.y=Math.PI;g1.add(m);
@@ -431,11 +437,40 @@ mtable(g1,7.3,14.9,9.3,15.9,[[7.8,14.6],[8.8,14.6],[7.8,16.2],[8.8,16.2],[7.0,15
 cyl(g1,8.3,15.4,.025,.025,0,2.35,M.alu,8);
 {const c=new THREE.Mesh(new THREE.ConeGeometry(1.5,.45,8,1,true),M.canopy);c.position.set(X(8.3),2.4,Z(15.4));c.castShadow=true;g1.add(c);}
 box(g1,10.2,16.2,12.3,16.85,0,.42,M.alu); box(g1,10.25,16.22,12.25,16.83,.42,.52,M.cush); box(g1,10.2,16.7,12.3,16.87,.52,.85,M.cush);
-box(g1,11.7,14.8,12.3,16.2,0,.42,M.alu); box(g1,11.72,14.82,12.28,16.2,.42,.52,M.cush); box(g1,12.12,14.8,12.3,16.2,.52,.85,M.cush);
+box(g1,11.7,15.2,12.3,16.2,0,.42,M.alu); box(g1,11.72,15.22,12.28,16.2,.42,.52,M.cush); box(g1,12.12,15.2,12.3,16.2,.52,.85,M.cush);
 box(g1,10.6,15.1,11.4,15.7,0,.38,M.wood);
 box(g1,6.9,16.95,9.9,17.35,0,.5,M.alu); box(g1,6.95,17.0,9.85,17.3,.5,.55,std(0x4a3a2c));
 for(let x=7.1;x<9.8;x+=.45){const m=new THREE.Mesh(new THREE.IcosahedronGeometry(.25+rnd()*.1,1),LEAF[Math.floor(rnd()*5)]);m.position.set(X(x),.75+rnd()*.2,Z(17.15));m.castShadow=true;g1.add(m);}
-plant(g1,12.3,14.3); plant(g1,6.95,14.3,'S');
+plant(g1,6.95,14.3,'S');
+// tireuse à bière Lynx Movement (couleurs provisoires : noir, orange, crème)
+{const LB=0x1d1d1b, LO=0xe8792b, LC=0xf3e9d2;
+ const ears=(x,cx,y,sz,col)=>{x.fillStyle=col;[-1,1].forEach(sd=>{x.beginPath();x.moveTo(cx+sd*sz*.25,y);x.lineTo(cx+sd*sz*.55,y-sz*.95);x.lineTo(cx+sd*sz*.62,y-sz*1.25);x.lineTo(cx+sd*sz*.72,y-sz*.9);x.lineTo(cx+sd*sz*.95,y);x.closePath();x.fill();});};
+ const front=canvasTex(1024,800,(x,w,h)=>{x.fillStyle='#1d1d1b';x.fillRect(0,0,w,h);
+   x.strokeStyle='#e8792b';x.lineWidth=6;x.strokeRect(34,34,w-68,h-68);
+   ears(x,w/2,260,150,'#e8792b');
+   x.fillStyle='#f3e9d2';x.textAlign='center';x.textBaseline='alphabetic';
+   x.font='700 250px "Barlow Condensed", Arial Narrow, Arial, sans-serif';spaced(x,'LYNX',w/2,500,18);
+   x.fillStyle='#e8792b';x.font='600 86px "Barlow Condensed", Arial Narrow, Arial, sans-serif';spaced(x,'MOVEMENT',w/2,610,26);
+   x.fillStyle='#f3e9d2';x.fillRect(w/2-160,655,320,3);
+   x.font='500 34px Barlow, Arial, sans-serif';spaced(x,'BRASSERIE ARTISANALE – MARTIGNY',w/2,715,5);});
+ const back=canvasTex(1024,512,(x,w,h)=>{x.fillStyle='#1d1d1b';x.fillRect(0,0,w,h);
+   ears(x,w/2,170,95,'#e8792b');
+   x.fillStyle='#f3e9d2';x.textAlign='center';x.font='700 120px "Barlow Condensed", Arial Narrow, Arial, sans-serif';spaced(x,'LYNX MOVEMENT',w/2,320,10);
+   x.fillStyle='#e8792b';x.font='500 48px Barlow, Arial, sans-serif';spaced(x,'À LA PRESSION',w/2,405,12);});
+ box(g1,11.1,13.97,12.3,14.55,0,1.0,std(LB,{roughness:.5}));
+ box(g1,11.1,13.97,11.14,14.55,.1,.9,std(LO)); box(g1,12.26,13.97,12.3,14.55,.1,.9,std(LO));
+ const fp=new THREE.Mesh(new THREE.PlaneGeometry(1.1,.86),new THREE.MeshStandardMaterial({map:front,roughness:.5}));fp.position.set(X(11.7),.5,Z(14.556));g1.add(fp);
+ box(g1,11.05,13.95,12.35,14.6,1.0,1.04,M.wood);
+ box(g1,11.35,14.3,12.05,14.5,1.04,1.06,M.steel);
+ cyl(g1,11.7,14.22,.04,.05,1.04,1.42,M.steel);
+ box(g1,11.33,14.18,12.07,14.28,1.38,1.48,M.steel);
+ [11.47,11.7,11.93].forEach((x,i)=>{cyl(g1,x,14.33,.015,.015,1.3,1.4,M.steel,8);box(g1,x-.012,14.26,x+.012,14.34,1.39,1.41,M.steel,false);
+   cyl(g1,x,14.23,.022,.018,1.48,1.72,std(i===1?LC:LO,{roughness:.4}),10);});
+ box(g1,11.1,13.95,12.3,13.99,1.04,1.9,std(LB,{roughness:.5}));
+ const bp=new THREE.Mesh(new THREE.PlaneGeometry(1.14,.57),new THREE.MeshStandardMaterial({map:back,roughness:.5}));bp.position.set(X(11.7),1.5,Z(13.995));g1.add(bp);
+ const beer=std(0xe0a030,{transparent:true,opacity:.8,roughness:.1}), foam=std(0xfaf6ea);
+ [[11.25,14.42],[12.15,14.4],[12.2,14.15]].forEach(([x,y])=>{cyl(g1,x,y,.035,.03,1.04,1.18,beer,12);cyl(g1,x,y,.036,.036,1.18,1.21,foam,12);});
+}
 
 /* ================= Site ================= */
 const ground=new THREE.Mesh(new THREE.PlaneGeometry(260,260),std(0xffffff,{map:rep(T.grass,40,40)}));ground.rotation.x=-Math.PI/2;ground.position.y=-.01;ground.receiveShadow=true;gSite.add(ground);
@@ -487,7 +522,8 @@ lbl(g1,11.7,9.3,1.7,'WC');
 lbl(g1,.62,8.9,1.5,'Imprimante');
 lbl(g1,3.6,14.0,1.7,'Faact + BBX','7 postes');
 lbl(g1,9.8,11.0,1.7,'Cuisine');
-lbl(g1,10.8,14.6,1.5,'Terrasse');
+lbl(g1,9.6,14.6,1.5,'Terrasse');
+lbl(g1,11.7,14.25,2.15,'Tireuse Lynx Movement');
 lbl(gSite,W/2,N0-31+D/2,0,'Autoroute (E27)',null,'site');
 lbl(gSite,W/2,N0-6.2+D/2,0,'Rue du Châble-Bet',null,'site');
 lbl(gSite,W/2-15.3,4+D/2,0,'Rue du Châble-Bet',null,'site');
@@ -570,6 +606,7 @@ function frame(){
   requestAnimationFrame(frame);
 }
 frame();
+if(document.fonts&&document.fonts.load){Promise.all(['600 100px Barlow','500 40px Barlow','700 100px "Barlow Condensed"','600 80px "Barlow Condensed"'].map(f=>document.fonts.load(f))).then(()=>redraws.forEach(r=>r())).catch(()=>{});}
 })();
 </script>
 </body>
