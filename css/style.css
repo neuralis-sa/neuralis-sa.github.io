@@ -4857,3 +4857,18 @@ section.article {
     background-position: center;
   }
 }
+
+/* Badge ISO 9001 footer */
+.footer-box-item .iso-badge {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+.iso-badge-link {
+  display: inline-block;
+}
+.iso-badge-link:hover .iso-badge {
+  opacity: 0.85;
+}
